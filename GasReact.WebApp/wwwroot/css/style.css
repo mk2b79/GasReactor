@@ -1,0 +1,11 @@
+.records-table{
+    padding:5px;
+    border-radius:10px;
+    background-color: #0dcaf0;
+}
+.records-row{
+    padding: 5px;
+    margin: 1px;
+    background-color:#bacbe6;
+    border-radius: 6px;
+}
