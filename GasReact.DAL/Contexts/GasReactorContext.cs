@@ -16,7 +16,7 @@ namespace GasReact.DAL.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=GasReact.db");
+            optionsBuilder.UseSqlite("Data Source=../GasReact.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
