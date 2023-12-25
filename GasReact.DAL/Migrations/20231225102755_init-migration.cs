@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace GasReact.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,9 +19,9 @@ namespace GasReact.DAL.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    fermentator_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    fermentator_name = table.Column<string>(type: "text", nullable: false)
+                    fermentator_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    fermentator_name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,9 +33,9 @@ namespace GasReact.DAL.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    type_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    type_name = table.Column<int>(type: "integer", nullable: false)
+                    type_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    type_name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,9 +47,9 @@ namespace GasReact.DAL.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    record_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    fermentator_id = table.Column<int>(type: "integer", nullable: false)
+                    record_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    fermentator_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,11 +68,12 @@ namespace GasReact.DAL.Migrations
                 schema: "public",
                 columns: table => new
                 {
-                    indicator_id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    type_id = table.Column<int>(type: "integer", nullable: false),
-                    value = table.Column<decimal>(type: "numeric", nullable: false),
-                    record_id = table.Column<int>(type: "integer", nullable: false)
+                    indicator_id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    type_id = table.Column<int>(type: "INTEGER", nullable: false),
+                    value = table.Column<decimal>(type: "TEXT", nullable: false),
+                    date = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    record_id = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

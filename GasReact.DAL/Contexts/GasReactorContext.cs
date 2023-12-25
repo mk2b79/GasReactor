@@ -16,8 +16,7 @@ namespace GasReact.DAL.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(
-                "Server=localhost; Port=5432; Database=GasReactorDb; User ID=postgres; Password=nkme2600");
+            optionsBuilder.UseSqlite("Data Source=GasReact.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
