@@ -69,7 +69,7 @@ namespace GasReact.DAL.Migrations
                     b.ToTable("indicators", "public");
                 });
 
-            modelBuilder.Entity("GasReact.DAL.Entities.Record", b =>
+            modelBuilder.Entity("GasReact.DAL.Entities.Node", b =>
                 {
                     b.Property<int>("RecordId")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace GasReact.DAL.Migrations
 
                     b.HasIndex("FermentatorId");
 
-                    b.ToTable("records", "public");
+                    b.ToTable("nodes", "public");
                 });
 
             modelBuilder.Entity("GasReact.DAL.Entities.TypesIndicators", b =>
@@ -108,7 +108,7 @@ namespace GasReact.DAL.Migrations
 
             modelBuilder.Entity("GasReact.DAL.Entities.Indicator", b =>
                 {
-                    b.HasOne("GasReact.DAL.Entities.Record", "Record")
+                    b.HasOne("GasReact.DAL.Entities.Node", "Record")
                         .WithMany("Indicators")
                         .HasForeignKey("RecordId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -125,7 +125,7 @@ namespace GasReact.DAL.Migrations
                     b.Navigation("Type");
                 });
 
-            modelBuilder.Entity("GasReact.DAL.Entities.Record", b =>
+            modelBuilder.Entity("GasReact.DAL.Entities.Node", b =>
                 {
                     b.HasOne("GasReact.DAL.Entities.Fermentator", "Fermentator")
                         .WithMany("Records")
@@ -141,7 +141,7 @@ namespace GasReact.DAL.Migrations
                     b.Navigation("Records");
                 });
 
-            modelBuilder.Entity("GasReact.DAL.Entities.Record", b =>
+            modelBuilder.Entity("GasReact.DAL.Entities.Node", b =>
                 {
                     b.Navigation("Indicators");
                 });

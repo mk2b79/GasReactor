@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GasReact.DAL.Entities.Configurations
 {
-    internal class RecordConfiguration : IEntityTypeConfiguration<Record>
+    internal class NodeConfiguration : IEntityTypeConfiguration<Node>
     {
-        public void Configure(EntityTypeBuilder<Record> builder)
+        public void Configure(EntityTypeBuilder<Node> builder)
         {
-            builder.ToTable("records", "public");
+            builder.ToTable("nodes", "public");
 
             builder.HasKey(r => r.RecordId);
             builder.Property(r => r.RecordId)

@@ -9,5 +9,5 @@ public class Indicator
 
     public virtual TypesIndicators? Type { get; set; }
 
-    public virtual Record? Record { get; set; }
+    public virtual Node? Record { get; set; }
 }

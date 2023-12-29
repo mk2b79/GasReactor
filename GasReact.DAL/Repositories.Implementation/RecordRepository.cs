@@ -13,15 +13,15 @@ public class RecordRepository:IRecordRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<Record>> GetAllAsync()
+    public async Task<IEnumerable<Node>> GetAllAsync()
     {
-        return await _context.Records.Include(r => r.Fermentator)
+        return await _context.Nodes.Include(r => r.Fermentator)
             .ToListAsync();
     }
 
-    public async Task<Record> GetFullAsync(int id)
+    public async Task<Node> GetFullAsync(int id)
     {
-        var record = await _context.Records
+        var record = await _context.Nodes
             .Include(r => r.Fermentator)
             .Include(r => r.Indicators)
             .Where(r => r.RecordId == id)
@@ -29,15 +29,15 @@ public class RecordRepository:IRecordRepository
         return record;
     }
 
-    public async Task AddAsync(Record record)
+    public async Task AddAsync(Node node)
     {
-        await _context.Records.AddAsync(record);
+        await _context.Nodes.AddAsync(node);
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Record record)
+    public async Task DeleteAsync(Node node)
     {
-        _context.Records.Remove(record);
+        _context.Nodes.Remove(node);
         await _context.SaveChangesAsync();
     }
 }

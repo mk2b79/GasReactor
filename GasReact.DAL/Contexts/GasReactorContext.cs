@@ -10,7 +10,7 @@ namespace GasReact.DAL.Contexts
         // {}
 
         public DbSet<Fermentator>? Fermentators { get; set; }
-        public DbSet<Record>? Records { get; set; }
+        public DbSet<Node>? Nodes { get; set; }
         public DbSet<TypesIndicators>? IndicatorTypes { get; set; }
         public DbSet<Indicator>? Indicators { get; set; }
 

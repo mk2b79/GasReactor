@@ -4,8 +4,8 @@ namespace GasReact.DAL.Repositories;
 
 public interface IRecordRepository
 {
-    Task<IEnumerable<Record>> GetAllAsync();
-    Task<Record> GetFullAsync(int id);
-    Task AddAsync(Record record);
-    Task DeleteAsync(Record record);
+    Task<IEnumerable<Node>> GetAllAsync();
+    Task<Node> GetFullAsync(int id);
+    Task AddAsync(Node node);
+    Task DeleteAsync(Node node);
 }

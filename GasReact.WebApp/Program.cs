@@ -21,7 +21,6 @@ builder.Services.AddScoped<IInicatorRepository, IndicatorRepository>();
 
 //BLL Dependency Injection
 builder.Services.AddScoped<FermentatorServices>();
-builder.Services.AddScoped<RecordServices>();
 builder.Services.AddScoped<TypesIndicatorsServices>();
 builder.Services.AddScoped<IndicatorServices>();
 

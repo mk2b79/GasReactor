@@ -1,6 +1,6 @@
 ﻿namespace GasReact.DAL.Entities
 {
-    public class Record
+    public class Node
     {
         public int RecordId { get; set; }
         public int FermentatorId { get; set; }

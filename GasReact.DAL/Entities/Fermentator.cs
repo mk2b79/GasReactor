@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string? FermentatorName { get; set; }
 
-        public virtual IEnumerable<Record>? Records { get; set; }
+        public virtual IEnumerable<Node>? Records { get; set; }
     }
 }
