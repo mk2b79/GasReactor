@@ -1,3 +1,4 @@
+using System.Reflection;
 using GasReact.BLL.Services;
 using GasReact.DAL.Contexts;
 using GasReact.DAL.Repositories;
@@ -10,8 +11,8 @@ builder.Services.AddControllersWithViews();
 //Add DbContext in services
 builder.Services.AddDbContext<GasReactorContext>();
 
-// builder.Services.AddDbContext<GasReactorContext>(options => options.UseNpgsql(
-//     "Server=localhost; Port=5432; Database=GasReactorDb; User ID=postgres; Password=nkme2600"));
+// Injection Mapping
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 //DAL Dependency Injection
 builder.Services.AddScoped<IFermentatorRepository, FermentatorRepository>();
@@ -23,6 +24,7 @@ builder.Services.AddScoped<IInicatorRepository, IndicatorRepository>();
 builder.Services.AddScoped<FermentatorServices>();
 builder.Services.AddScoped<TypesIndicatorsServices>();
 builder.Services.AddScoped<IndicatorServices>();
+builder.Services.AddScoped<ChartServices>();
 
 var app = builder.Build();
 
